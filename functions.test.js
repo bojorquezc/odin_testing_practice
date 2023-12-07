@@ -1,5 +1,9 @@
-import { sum } from "./functions";
+import { capitalize, reverseString } from "./functions";
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+test('capitalizes string', () => {
+    expect(capitalize('hello world')).toBe('Hello world');
+});
+
+test('reverses string', () => {
+    expect(reverseString('hello world')).toBe('dlrow olleh');
 });
