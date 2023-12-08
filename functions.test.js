@@ -19,4 +19,8 @@ test('caesar cipher', () => {
     expect(caesarCipher('hello', 1)).toBe('ifmmp');
     expect(caesarCipher('hello foo', 1)).toBe('ifmmp gpp');
     expect(caesarCipher('hello', 5)).toBe('mjqqt');
+    expect(caesarCipher('hello', 26)).toBe('hello');
+    expect(caesarCipher('hello', 27)).toBe('ifmmp');
+    expect(caesarCipher('why why', 3)).toBe('zkb zkb');
+    expect(caesarCipher('why why', 6)).toBe('cne cne');
 });

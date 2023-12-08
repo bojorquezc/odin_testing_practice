@@ -35,7 +35,7 @@ function findCharIndex(text) {
 
     for (const char of array) {
         if (alphabet.indexOf(char) == -1) {
-            positionArray.push(null);
+            positionArray.push(char);
         } else {
             positionArray.push(alphabet.indexOf(char));
         }
@@ -48,8 +48,11 @@ function shiftedArray (array, shiftFactor) {
     const shiftedArray = [];
 
     for (const position of array) {
-        if (position == null) {
-            shiftedArray.push(null)
+        if (typeof(position) != 'number') {
+            shiftedArray.push(position)
+        } else if ((position + shiftFactor) >= 26) {
+            const shift = (position + shiftFactor) % 26;
+            shiftedArray.push(shift)
         } else {
             shiftedArray.push(position + shiftFactor);
         }
@@ -68,7 +71,7 @@ function decipherArray(array) {
             decipheredArray.push(alphabet[position])
         }
     }
-    
+
     return decipheredArray;
 }
 
