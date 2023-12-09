@@ -83,9 +83,55 @@ function caesarCipher (text, shiftFactor) {
     return decipheredArray;
 }
 
+function average(array) {
+    let sum = 0;
+    for (const item of array) {
+        sum += item;
+    }
+    return Math.round(sum / array.length);
+}
+
+function max (array) {
+    let max = 0;
+    for (const item of array) {
+        if (array.indexOf(item) == 0) {
+            max = item;
+        } else {
+            if (item > max) {
+                max = item;
+            }
+        }
+    }
+    return max;
+}
+
+function min (array) {
+    let min = 0;
+    for (const item of array) {
+        if (array.indexOf(item) == 0) {
+            min = item;
+        } else {
+            if (item < min) {
+                min = item;
+            }
+        }
+    }
+    return min;
+}
+
+function analyzeArray (array) {
+    let object = {};
+    object.average = average(array);
+    object.max = max(array);
+    object.min = min(array);
+    object.length = array.length;
+    return object;
+}
+
 export {
     capitalize,
     reverseString,
     calculator,
     caesarCipher,
+    analyzeArray,
 }

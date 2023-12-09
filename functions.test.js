@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, caesarCipher } from "./functions";
+import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from "./functions";
 
 test('capitalizes string', () => {
     expect(capitalize('hello world')).toBe('Hello world');
