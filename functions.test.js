@@ -24,3 +24,12 @@ test('caesar cipher', () => {
     expect(caesarCipher('why why', 3)).toBe('zkb zkb');
     expect(caesarCipher('why why', 6)).toBe('cne cne');
 });
+
+test('analyze array', () => {
+    const testArray1 = [1, 2, 3, 4, 5];
+    const testArray2 = [3,9,1,25,99];
+    const testArray3 = [425, 232, 33, 65, 939];
+    expect(analyzeArray(testArray1)).toEqual({average:3, min:1, max:5, length:5});
+    expect(analyzeArray(testArray2)).toEqual({average:27, min:1, max:99, length:5});
+    expect(analyzeArray(testArray3)).toEqual({average:339, min:33, max:939, length:5 });
+})
